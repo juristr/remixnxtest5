@@ -1,0 +1,56 @@
+{
+  "root": "libs/remixui",
+  "sourceRoot": "libs/remixui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "libs/remixui/dist",
+        "tsConfig": "libs/remixui/tsconfig.lib.json",
+        "project": "libs/remixui/package.json",
+        "entryFile": "libs/remixui/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/remixui/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "format": [
+          "cjs"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/remixui/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/remixui"
+      ],
+      "options": {
+        "jestConfig": "libs/remixui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
