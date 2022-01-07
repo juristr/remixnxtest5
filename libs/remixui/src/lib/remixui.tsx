@@ -14,4 +14,4 @@ export function Remixui(props: RemixuiProps) {
   );
 }
 
-export default Remixui;
+// export default Remixui;

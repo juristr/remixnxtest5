@@ -1,5 +1,8 @@
-// import { Remixui } from '@remixnxtest5/remixui';
-import { Remixui } from '../../libs/remixui';
+// fails with this
+import { Remixui } from '@remixnxtest5/remixui';
+
+// works with this import
+// import { Remixui } from '../../libs/remixui';
 
 export default function Index() {
   return (
